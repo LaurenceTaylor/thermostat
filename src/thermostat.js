@@ -6,12 +6,12 @@ function Thermostat() {
 };
 
 Thermostat.prototype.up = function() {
-  if(this._temperature === this._max) {throw new Error("Ouch, my bones are hot! Owie!")}
+  if(this._temperature === this._max) {throw new Error("Max temperature reached")}
   this._temperature++;
 };
 
 Thermostat.prototype.down = function() {
-  if(this._temperature === this._min) {throw new Error("It's hecking freezing in here!")}
+  if(this._temperature === this._min) {throw new Error("Min temperature reached")}
   this._temperature--;
 };
 

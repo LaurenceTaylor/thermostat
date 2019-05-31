@@ -1,8 +1,9 @@
+'use strict';
+
 function Thermostat() {
   this._temperature = 20;
   this._min = 10;
   this._max = 25;
-  this._powerSavingMode = true;
 };
 
 Thermostat.prototype.up = function() {
@@ -15,13 +16,12 @@ Thermostat.prototype.down = function() {
   this._temperature--;
 };
 
-Thermostat.prototype.toggle = function() {
-  this._powerSavingMode = !this._powerSavingMode;
-  this._powerSavingMode === true ? this._max = 25 : this._max = 32;
+Thermostat.prototype.powerSaveToggle = function() {
+  this._max === 25 ? this._max = 32 : this._max = 25;
 }
 
 Thermostat.prototype.reset = function() {
-  this._temperature = 20
+  this._temperature = 20;
 }
 
 Thermostat.prototype.usage = function() {

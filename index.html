@@ -5,29 +5,60 @@
     <title>Thermostat</title>
   </head>
   <body>
+    <center>
     <script src="jquery.js"></script>
-    <script>
-      $( document ).ready(function() {
-        alert( "Welcome thermostat lover" );
-      });
-    </script>
-
-    <script type="text/javascript" src="src/thermostat.js">
+    <script src="interface.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="src/thermostat.js">
 
     </script>
     <div class="thermo-gauge">
-      <p>This is a gauge</p>
+
+    <!-- <section>
+        <h1>Current temperature: <span id="temperature"></span></h1>
+        <select id="current-city">
+          <option value="london">London</option>
+          <option value="newyork">New York</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+        </select>
+    </section> -->
+
+
+    <section>
+      <h1>Current temperature: <span id="temperature"></span></h1>
+        <form id="select-city">
+          <input id="current-city" type="text" placeholder="Enter a city"></input>
+          <input type="submit"></input>
+        </form>
+    </section>
     </div>
 
     <div class="up-down-buttons">
-      <button type="button" name="decrease-temp">Lower Temp</button>
-      <button type="button" name="increase-temp">Increase Temp</button>
+      <button id = 'down' type="button" name="decrease-temp">Decrease Temp</button>
+      <button id = 'up' type="button" name="increase-temp">Increase Temp</button>
     </div>
 
     <div class="power-resets">
-      <button type="button" name="power-save">Power Save</button>
-      <button type="button" name="reset">Reset Temp</button>
+      <button id = 'powerSave' type="button" name="power-save">Power Save</button>
+      <button id = 'reset' type="button" name="reset">Reset Temp</button>
     </div>
+    <p id="trash" style="overflow: scroll; width: 400px; height: 100px;">
+    Compressed and uncompressed copies of jQuery files are available.
+    The uncompressed file is best used during development or debugging;
+    the compressed file saves bandwidth and improves performance in production.
+    You can also download a sourcemap file for use when debugging with a compressed file.
+    The map file is not required for users to run jQuery, it just improves the developer's
+    debugger experience. As of jQuery 1.11.0/2.1.0 the //# sourceMappingURL comment is not
+    included in the compressed file.
+    </p>
+    </center>
 
+    <script>
+      $( document ).ready(function() {
+        alert( "Welcome to the thermostat" );
+        $( '#trash' ).slideDown(300);
+      });
+    </script>
   </body>
 </html>
